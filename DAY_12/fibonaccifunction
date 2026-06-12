@@ -1,0 +1,43 @@
+// Program to print fibonacci series using a function:
+// Steps:
+// Step 1: Create a function to print the Fibonacci series.
+// Step 2: Take the number of terms as input from the user.
+// Step 3: Initialize the first two terms as 0 and 1.
+// Step 4: Generate the next terms by adding the previous two terms.
+// Step 5: Display the Fibonacci series.
+// Time Complexity: O(n)
+
+#include <iostream>
+using namespace std;
+
+void fibonacci(int n)
+{
+    int a = 0, b = 1, c;
+
+    for(int i = 1; i <= n; i++)
+    {
+        cout << a << " ";
+
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    fibonacci(n);
+
+    return 0;
+}
+
+/*
+Output:
+Enter number of terms: 10
+0 1 1 2 3 5 8 13 21 34
+*/
