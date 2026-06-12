@@ -1,0 +1,47 @@
+//  Program of using function to check the armstrong number or not 
+// Steps:
+// Step 1: Create a function to check whether a number is Armstrong.
+// Step 2: Take a number as input from the user.
+// Step 3: Find the sum of cubes of its digits inside the function.
+// Step 4: Compare the sum with the original number.
+// Step 5: Return true if both are equal, otherwise return false.
+// Time Complexity: O(n)
+
+#include <iostream>
+using namespace std;
+
+bool isArmstrong(int num)
+{
+    int original = num;
+    int sum = 0;
+
+    while(num > 0)
+    {
+        int digit = num % 10;
+        sum = sum + (digit * digit * digit);
+        num = num / 10;
+    }
+
+    return (sum == original);
+}
+
+int main()
+{
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if(isArmstrong(num))
+        cout << "Armstrong Number";
+    else
+        cout << "Not an Armstrong Number";
+
+    return 0;
+}
+
+/*
+Output:
+Enter a number: 153
+Armstrong Number
+*/
